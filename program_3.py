@@ -1,4 +1,14 @@
 # Programming Excersize 3-13
+def ask_for_float(prompt : str) -> int:
+    """
+    Gets input. and re-prompts if a float is not inputed
+    """
+    while True:
+        try:
+            inp : float = float(input(prompt))
+            return inp
+        except ValueError:
+            print("You must enter an float.")
 
 # The Fast Freight Shipping Company charges the following rates:
 
@@ -15,7 +25,15 @@ def weight_conversion(weight):
     ######################
     # WRITE YOUR CODE HERE
     ######################
-    
+    if weight <= 2:
+        shippingCost = 1.50
+    elif 2 < weight <= 6:
+        shippingCost = 3.00
+    elif 6 < weight <= 10:
+        shippingCost = 4.00
+    elif weight >= 10:
+        shippingCost = 4.75
+
     return shippingCost
 
 #### This piece of the code has been done for you,
